@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="../">
+    <title>FWB TEST Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha256-IsefKVCcMUlgpXQgIMRsqbIqC6aP153JkybxTa7W7/8= sha512-mCNEsmR1i3vWAq8hnHfbCCpc6V5fP9t0N1fEZ1wgEPF/IKteFOYZ2uk7ApzMXkT71sDJ00f9+rVMyMyBFwsaQg==" crossorigin="anonymous">
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="dist/ferriswheelbutton.min.css">
+
+    <style type="text/css">
+    </style>
+
+  </head>
+  <body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+        <h1>Ferris Wheel Button Plugin - Custom Font</h1>
+        <hr>
+        <p>Here we Use Another font-family - Material Icons</p>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+        <h3>1. Include Material icon font family</h3>
+        <pre class='well' style="color:#fff">&lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"&gt;</pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+        <h3>2. Override generate and pass custom font icon</h3>
+        <pre class='well' style="color:#fff">
+ var options = {
+    'primaryIcon': 'launch', //Material Button
+    'closeIcon':'close',
+    <b>'fontIcon':'material-icons'</b>
+  };
+
+  var links = [
+    'android',
+    'build',
+    'face'
+  ];
+
+  <b>
+  $.ferrisWheelButton.generate = function(icon,fontIcon){
+    //Internally fontIcon refers to the setting you passed in options
+    return  $('&lt;i&gt;&lt;/i&gt;').addClass(fontIcon).text(icon);
+  };
+  </b>
+
+  $.ferrisWheelButton(options,links);
+</pre>
+
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src='bower_components/jquery/dist/jquery.js'></script>
+    <script type="text/javascript" src='dist/jquery.ferriswheelbutton.min.js'></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      var options = {
+        'primaryIcon': 'launch', //Material Button
+        'closeIcon':'close',
+        'fontIcon':'material-icons'
+      };
+
+      var links = [
+        'android',
+        'build',
+        'face'
+      ];
+
+      $.ferrisWheelButton.generate = function(icon,fontIcon){
+        //Internall fontIcon refers to the setting
+        return  $('<i></i>').addClass(fontIcon).text(icon);
+      };
+
+      $.ferrisWheelButton(options,links);
+
+    });
+    </script>
+  </body>
+</html>

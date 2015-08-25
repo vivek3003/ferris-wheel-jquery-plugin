@@ -53,8 +53,9 @@
 
     	$.each(buttons, function(index,key) {
     		var button = $('<div><i></i></div>');
+            var icon = $.ferrisWheelButton.generate(key,settings.fontIcon);
+            $(button).append(icon);
 
-    		$('i',button).addClass(settings.fontIcon).addClass(settings.fontIcon+'-'+key);
     		button.addClass('fwb_buttons');
     		button.attr('data-icon',key);
 
@@ -78,11 +79,16 @@
 
 
     	//Add Main Menu Button
-    	var primaryIcon  = settings.fontIcon +' '+settings.fontIcon+'-'+settings.primaryIcon;
-    	var closeIcon  = settings.fontIcon +' '+settings.fontIcon+'-'+settings.closeIcon;
 
-    	var sbMenu = $("<div class='fwb_menu'><div class='fwb_share'><i class='"+primaryIcon+"'></i></div><div class='fwb_close'><i class='"+closeIcon+"'></i></div></div>");
-    	var sbMenuStyles = {
+
+
+    	var sbMenu = $("<div class='fwb_menu'><div class='fwb_share'></div><div class='fwb_close'></div></div>");
+    	var primaryIcon = $.ferrisWheelButton.generate(settings.primaryIcon,settings.fontIcon);
+        var closeIcon  = $.ferrisWheelButton.generate(settings.closeIcon,settings.fontIcon);
+        $('.fwb_share',sbMenu).append(primaryIcon);
+        $('.fwb_close',sbMenu).append(closeIcon);
+
+        var sbMenuStyles = {
     		'color':settings.buttonColor,
     		'background-color':settings.buttonBg
     	};
@@ -186,6 +192,10 @@
         } else {
             $.error( 'Method ' +  methodOrOptions + ' does not exist on jQuery.ferrisWheelButton' );
         }
+    };
+
+    ferrisWheelButton.generate = function(icon,fontIcon){
+        return  $('<i></i>').addClass(fontIcon).addClass(fontIcon+'-'+icon).attr('title',icon);
     };
 
     $.extend({ferrisWheelButton:ferrisWheelButton});
