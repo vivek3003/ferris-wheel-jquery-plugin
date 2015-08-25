@@ -1,0 +1,65 @@
+#ferrisWheelButton_menu {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg); }
+  #ferrisWheelButton_menu > .fwb_menu {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16); }
+    #ferrisWheelButton_menu > .fwb_menu div {
+      width: 100%;
+      height: 100%;
+      display: table;
+      position: absolute;
+      left: 0px;
+      top: 0px; }
+      #ferrisWheelButton_menu > .fwb_menu div i {
+        display: table-cell;
+        vertical-align: middle; }
+    #ferrisWheelButton_menu > .fwb_menu .fwb_share {
+      opacity: 1;
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg); }
+    #ferrisWheelButton_menu > .fwb_menu .fwb_close {
+      opacity: 0; }
+  #ferrisWheelButton_menu > .fwb_menu.fwb_active {
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    -o-transform: scale(0.7);
+    transform: scale(0.7); }
+    #ferrisWheelButton_menu > .fwb_menu.fwb_active .fwb_share {
+      opacity: 0; }
+    #ferrisWheelButton_menu > .fwb_menu.fwb_active .fwb_close {
+      opacity: 1; }
+  #ferrisWheelButton_menu > div {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 50%;
+    display: table; }
+    #ferrisWheelButton_menu > div i {
+      display: table-cell;
+      vertical-align: middle; }
+    #ferrisWheelButton_menu > div:hover {
+      cursor: pointer; }
+
+/*# sourceMappingURL=ferrisWheelButton.css.map */

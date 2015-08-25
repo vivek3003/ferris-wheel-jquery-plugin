@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="../">
+    <title>Title Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/ferriswheelbutton.min.css">
+    <style type="text/css">
+    body{
+      background: #1e1e1e;
+      height: 1200px;
+      color: #fff;
+    }
+    </style>
+
+  </head>
+  <body>
+    <h1 class="text-center">Ferris Wheel Button Plugin</h1>
+
+    <script type="text/javascript" src='bower_components/jquery/dist/jquery.js'></script>
+    <script type="text/javascript" src='dist/jquery.ferriswheelbutton.min.js'></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      var options = {
+        'buttonBg' : '#2196F3',   //The Button Background Color
+        'buttonActiveBg' : '#1976D2', //The Button Background Color with close
+        'buttonColor': '#fff', //The Button Icon colors
+      };
+
+      var links = [
+        'facebook',
+        'github',
+        'codepen',
+        'wordpress',
+        'pinterest',
+        'whatsapp'
+      ];
+
+      // $.fn.shareButton(options,links);
+      $.ferrisWheelButton(options,links);
+
+      $.ferrisWheelButton('addLink','github','http://www.github.com');
+
+      $.ferrisWheelButton('getButtons').css({'border':'2px solid white'});
+
+      $.ferrisWheelButton('getButton','facebook').css({'background-color':'#3b5998','border':'2px dotted white'});
+
+      $.ferrisWheelButton('getButton','codepen').on('click',function(ev){
+        ev.stopImmediatePropagation();
+        alert('You clicked CodePen!!');
+      });
+
+    });
+    </script>
+  </body>
+</html>

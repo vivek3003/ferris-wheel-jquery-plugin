@@ -1,0 +1,84 @@
+@import 'utils/math.scss';
+@import 'utils/mixins.scss';
+
+
+$size:60px; //diameter of 1 bubble
+
+$sin30 : sin(30deg);
+$cos30 : cos(30deg);
+
+#ferrisWheelButton_menu{
+
+  width: $size;
+  height:$size;
+
+  position:fixed;
+
+  right:$size/2;
+  bottom:$size/2;
+  @include transform(rotate(180deg));
+
+  > .fwb_menu{
+    display:block;
+    width:100%;
+    height:100%;
+
+    position:absolute;
+    border-radius:50%;
+    text-align:center;
+    box-shadow:0 3px 10px rgba(0,0,0,0.23),0 3px 10px rgba(0,0,0,0.16);
+
+    div{
+      width:100%;
+      height:100%;
+      display: table;
+      position:absolute;
+      left:0px;
+      top:0px;
+      i{
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+
+    .fwb_share{
+      opacity: 1;
+      @include transform(rotate(180deg));
+
+    }
+
+    .fwb_close{
+      opacity:0;
+    }
+  }
+
+  > .fwb_menu.fwb_active{
+    @include transform(scale(0.7));
+    .fwb_share{
+      opacity: 0;
+    }
+
+    .fwb_close{
+      opacity:1;
+    }
+  }
+
+  > div{
+    @include box-sizing(border-box);
+    position:absolute;
+    width:100%;
+    height:100%;
+    text-align:center;
+
+    border-radius:50%;
+    display:table;
+    i{
+      display:table-cell;
+      vertical-align:middle;
+    }
+    &:hover{
+      cursor:pointer;
+    }
+  }
+}
+

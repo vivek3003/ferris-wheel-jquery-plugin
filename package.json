@@ -1,0 +1,12 @@
+{
+  "name": "ferris-wheel-button-jquery-plugin",
+  "version": "1.0.0",
+  "author": "Vivek Kaarthek",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-cssmin": "^0.13.0",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}

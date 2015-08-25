@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Ferris Wheel Button Jquery Plugin</title>
+
+		<!-- Bootstrap CSS -->
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha256-IsefKVCcMUlgpXQgIMRsqbIqC6aP153JkybxTa7W7/8= sha512-mCNEsmR1i3vWAq8hnHfbCCpc6V5fP9t0N1fEZ1wgEPF/IKteFOYZ2uk7ApzMXkT71sDJ00f9+rVMyMyBFwsaQg==" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="dist/ferriswheelbutton.min.css">
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-9 ">
+					<h1>Ferris Wheel Button Plugin</h1>
+					<hr>
+					<p>A simple jquery plugin inspired from <br>
+					<p><a href=' https://dribbble.com/shots/1960058-Menu-Animation-Ferris-Wheel' target="_blank">Srikant Shetty's shot on Dribble</a><br>
+					What you see in the right hand bottom corner of the page is the plugin !! :)</p>
+					<a href='https://github.com/vivek3003/ferris-wheel-jquery-plugin' class="btn btn-default" target='_blank'>Download Source</a>
+					</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12 col-sm-9 ">
+					<h3>Getting Started</h3>
+					<hr>
+					<p>Include the required files</p>
+					<p>CSS. <span class='text-info'>Font awesome is required for Icons.Alternatively you can use glyphicons too.</span></p>
+					<pre class='well' style="color:#fff">&lt;link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"&gt;<br>&lt;link rel="stylesheet" type="text/css" href="dist/ferriswheelbutton.min.css"&gt;</pre>
+
+					<p>JS</p>
+					<pre class='well' style="color:#fff">&lt;script src="//code.jquery.com/jquery.js">&lt;/script&gt;<br>&lt;script src="dist/jquery.ferriswheelbutton.min.js"&gt;&lt;/script&gt;</pre>
+
+					<p>Now simply call,</p>
+					<pre  class='well' style="color:#fff">links = ['facebook','github','codepen','pinterest','wordpress'];<br>$.ferrisWheelButton(links);</pre>
+					<p>NOTE : <span class='text-info'><a href='https://fortawesome.github.io/Font-Awesome/icons/' target='_blank'>The plugin uses font-awesome for its icons.</span></a></p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12 col-sm-9 ">
+					<h3>Customizing the plugin</h3>
+					<hr>
+					<h4>1. Available Settings</h4>
+					<p>The following setings are available</p>
+					<pre class='well' style="color:#fff">options = {<br>size: 60,	//The Button Diameter<br>fontSize: 30,	//font-size for icons ideally keep it half<br>buttonBg: '#009688',	//The Button Background Color<br>buttonColor: '#ffffff',	//The Button Icon colors<br>transTime: '0.75s',	// Transition Timing<br>transTimingFuntion: 'cubic-bezier(.37,1.25,.95,1.18)',// Transition Timing function<br>fontIcon: 'fa',	// 'fa'-font awesome , 'glyphicon' - bootstrap glyphicons<br>primaryIcon: 'share-alt',	//The main Icon. <br>closeIcon: 'times'	// Icon for close<br>}<br><br>icons = ['facebook','twitter']<br><br>$.ferrisWheelButton(options,icons);<br></pre>
+
+					<h4>2. Changing Icons</h4>
+
+					<p>For font-awesome,</p>
+					<div class='well'>
+						If you would like to use the following icon <br>
+						<a href='http://fortawesome.github.io/Font-Awesome/icon/chrome/' target='_blank'><i class='fa fa-chrome'></i>   fa-chrome</a>
+						<p>Simply pass 'chrome' in the icons array</p>
+					</div>
+
+					<p>For glyphicons,</p>
+					<div class='well'>
+						<p> In options pass 'fontIcon' as:</p>
+						<p> fontIcon : 'glyphicon'</p>
+						<p>If you would like to use the following icon</p>
+						<p><a href='http://glyphicons.bootstrapcheatsheets.com/' target='_blank'><i class='glyphicon glyphicon-menu-hamburger'>   glyphicon-menu-hamburger</i></a></p>
+						<p>Simply pass 'menu-hamburger' in the icons array</p>
+					</div>
+
+					<h4>3. Adding Links</h4>
+					<p> To add a link over any button , call:</p>
+					<pre class='well' style="color:#fff">$.ferrisWheelButton('addLink',icon,link);<br><br>Example<br>$.ferrisWheelButton('addLink','codepen','http://codepen.io/vivek3003');</pre>
+					Now the codepen button points to the link passed as param.
+
+					<h4>4. Acessing Buttons</h4>
+					<p> To access all buttons , call:</p>
+					<pre class='well' style="color:#fff">$.ferrisWheelButton('getButtons'); // returns all buttons.<br><br>Example<br>$.ferrisWheelButton('getButtons').css({'border':'2px solid white'});<br>//Setting border on all elements</pre>
+
+					<p> To access a single button , call:</p>
+					<pre class='well' style="color:#fff">$.ferrisWheelButton('getButtons','icon-name'); // returns button with 'icon-name'<br><br>Example<br>$.ferrisWheelButton('getButton','facebook')<br>.css({'background-color':'#3b5998','border':'2px dotted white'})<br>.on('click',function(ev){<br>	//Call stopImmediatePropagation to prevent button from closing<br>	ev.stopImmediatePropagation();<br>	alert('You clicked facebook!');<br>});</pre>
+
+					<p>To Access via css</p>
+					<p>Use the class <b class='text-warning'>fwb_menu</b> to access the main button</p>
+					<p>Use the selector <b class='text-warning'>div[data-icon=iconName]</b> to select a particular button</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12 col-sm-9 ">
+					<h3>Code used in this page</h3>
+					<hr>
+					<pre class='well' style="color:#fff">
+&lt;script type="text/javascript"&gt;
+	jQuery(document).ready(function($) {
+
+		options = {
+			'primaryIcon':'external-link'
+		};
+
+		icons = ['facebook','github','codepen','pinterest','wordpress'];
+		$.ferrisWheelButton(options,icons);
+
+
+		//Directly make them links
+		$.ferrisWheelButton('addLink','github','https://www.github.com/vivek3003');
+		$.ferrisWheelButton('addLink','wordpress','http://kaarthek.wordpress.com');
+		$.ferrisWheelButton('addLink','codepen','http://codepen.io/vivek3003');
+
+
+		//Use jquery on all buttons
+		$.ferrisWheelButton('getButtons').css({
+			'border':'2px solid white'
+		});
+
+
+		//Use normal jquery methods on any button indivdiually
+		$.ferrisWheelButton('getButton','facebook').css({
+			'background-color':'#3b5998',
+			'border':'2px dotted white'
+		}).on('click',function(ev){
+			//Call stopImmediatePropagation to prevent button from closing
+			ev.stopImmediatePropagation();
+			alert('You clicked facebook!');
+		});
+
+		//And use method chaining
+		$.ferrisWheelButton('getButton','pinterest').css({
+			'background-color':'#cc2127',
+			'border':'none'
+		}).attr('title','Click here to Pin this');
+
+	});
+&lt;/script&gt;</pre>
+				</div>
+			</div>
+
+
+		</div>
+		<!-- jQuery -->
+		<script src="//code.jquery.com/jquery.js"></script>
+
+		<script src="dist/jquery.ferriswheelbutton.min.js"></script>
+		<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			options = {
+				'primaryIcon':'external-link'
+			};
+
+			icons = ['facebook','github','codepen','pinterest','wordpress'];
+			$.ferrisWheelButton(options,icons);
+
+			//Directly make them links
+			$.ferrisWheelButton('addLink','github','https://www.github.com/vivek3003');
+			$.ferrisWheelButton('addLink','wordpress','http://kaarthek.wordpress.com');
+			$.ferrisWheelButton('addLink','codepen','http://codepen.io/vivek3003');
+
+			//Use jquery on all buttons
+			$.ferrisWheelButton('getButtons').css({
+				'border':'2px solid white'
+			});
+			//Use normal jquery methods on any button indivdiually
+			$.ferrisWheelButton('getButton','facebook').css({
+				'background-color':'#3b5998',
+				'border':'2px dotted white'
+			}).on('click',function(ev){
+				//Call stopImmediatePropagation to prevent button from closing
+				ev.stopImmediatePropagation();
+				alert('You clicked facebook!');
+			});
+
+			//An use method chaining
+			$.ferrisWheelButton('getButton','pinterest').css({
+				'background-color':'#cc2127',
+				'border':'none'
+			}).attr('title','Click here to Pin this');
+
+
+		});
+		</script>
+	</body>
+</html>

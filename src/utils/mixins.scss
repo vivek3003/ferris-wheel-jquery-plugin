@@ -1,0 +1,27 @@
+@mixin transform($content){
+  -webkit-transform: $content;
+     -moz-transform: $content;
+      -ms-transform: $content;
+       -o-transform: $content;
+          transform: $content;
+}
+@mixin transform-origin($content){
+  -webkit-transform-origin: $content;
+     -moz-transform-origin: $content;
+      -ms-transform-origin: $content;
+       -o-transform-origin: $content;
+          transform-origin: $content;
+}
+@mixin transition($content){
+  -webkit-transition: $content;
+     -moz-transition: $content;
+      -ms-transition: $content;
+       -o-transition: $content;
+          transition: $content;
+}
+
+@mixin box-sizing($content){
+  -webkit-box-sizing: $content;
+     -moz-box-sizing: $content;
+          box-sizing: $content;
+}
